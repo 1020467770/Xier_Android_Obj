@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "Xier_Android_Obj"
