@@ -23,6 +23,10 @@ public class MainActivity extends BaseActivity {
 
     private GroupAdapter adapter;
 
+    /*
+        附加题：相邻的列表Item不同。（一左一右）
+     */
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

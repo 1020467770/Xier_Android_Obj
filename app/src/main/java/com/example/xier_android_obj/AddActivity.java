@@ -23,9 +23,15 @@ public class AddActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.putExtra("creatorName_return",creatorNameAdded.getText().toString());
-                intent.putExtra("groupName_return",groupNameAdded.getText().toString());
-                setResult(RESULT_OK,intent);
+                String creatorName=creatorNameAdded.getText().toString();
+                String groupName=groupNameAdded.getText().toString();
+                if("".equals(creatorName)||"".equals(groupName)){//判断是否添加成功
+                    setResult(RESULT_CANCELED,intent);
+                }else{
+                    intent.putExtra("creatorName_return",creatorName);
+                    intent.putExtra("groupName_return",groupName);
+                    setResult(RESULT_OK,intent);
+                }
                 finish();
             }
         });

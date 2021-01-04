@@ -18,7 +18,7 @@
             android:orientation="vertical"
             android:padding="10dp">
             <TextView
-                android:id="@+id/name_group2"
+                android:id="@+id/name_group"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="群名"
@@ -27,7 +27,7 @@
 
                 />
             <TextView
-                android:id="@+id/name_creator2"
+                android:id="@+id/name_creator"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="群聊创建者"
@@ -46,7 +46,7 @@
             android:padding="10dp"
             >
         <ImageView
-            android:id="@+id/img_group2"
+            android:id="@+id/img_group"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"

@@ -13,10 +13,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Random;
 
 public class GroupAdapter extends RecyclerView.Adapter<GroupAdapter.ViewHolder> {
 
     private List<GroupBean> mGrpList;
+
+    private boolean flag;
 
     public GroupAdapter(List<GroupBean> mGrpList) {
         this.mGrpList = mGrpList;
@@ -25,9 +28,20 @@ public class GroupAdapter extends RecyclerView.Adapter<GroupAdapter.ViewHolder> 
     @NonNull
     @Override
     public GroupAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_detail_acitivity,parent,false);
 
-        final ViewHolder holder = new ViewHolder(view);
+        flag = !flag;
+        ViewHolder holder;
+        if(flag) {
+
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_detail_acitivity,parent,false);
+
+            holder = new ViewHolder(view);
+        }else{
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.detail_activity_right,parent,false);
+
+            holder = new ViewHolder(view);
+        }
+
         holder.groupView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,5 +86,6 @@ public class GroupAdapter extends RecyclerView.Adapter<GroupAdapter.ViewHolder> 
             groupName = (TextView) itemView.findViewById(R.id.name_group);
             creatorName = (TextView) itemView.findViewById(R.id.name_creator);
         }
+
     }
 }
